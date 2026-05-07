@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khadija El Gour — Bibliographie Digitale</title>
+  <meta name="description" content="Bibliographie digitale de Khadija El Gour — sociologue, militante politique, présidente des femmes harakies. Travaux, apparitions, publications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── CSS VARIABLES ─────────────────────────────────── */
+    :root {
+      --bg:       #0a0a0f;
+      --surface:  #111118;
+      --card:     #16161f;
+      --border:   rgba(255,255,255,0.07);
+      --gold:     #c8a96e;
+      --gold-dim: rgba(200,169,110,0.15);
+      --gold-glow:rgba(200,169,110,0.08);
+      --white:    #f2ede8;
+      --muted:    rgba(242,237,232,0.5);
+      --tag-bg:   rgba(200,169,110,0.1);
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+      --font-arabic:  'Amiri', 'Traditional Arabic', serif;
+
+      --radius: 4px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ─── RESET & BASE ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── NOISE TEXTURE OVERLAY ─────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ─── NAVIGATION ─────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      color: var(--muted);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-ar {
+      font-family: var(--font-arabic);
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--white);
+      transition: var(--transition);
+    }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 100px clamp(1.5rem, 8vw, 8rem) 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse, rgba(200,169,110,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .hero-inner {
+      max-width: 900px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-name-ar {
+      font-family: var(--font-arabic);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--muted);
+      margin-bottom: 2rem;
+      direction: rtl;
+    }
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2rem auto;
+    }
+    .hero-subtitle {
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+    }
+    .tag {
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 100px;
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      background: var(--gold-glow);
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 2rem;
+      background: var(--gold);
+      color: var(--bg);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    .hero-cta:hover {
+      background: #d4b97e;
+      transform: translateY(-2px);
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    /* ─── SECTIONS COMMON ────────────────────────────────── */
+    section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 8vw, 8rem);
+    }
+    .section-header {
+      margin-bottom: 3.5rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .section-number {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 300;
+      color: rgba(200,169,110,0.08);
+      line-height: 1;
+      font-style: italic;
+      user-select: none;
+      position: absolute;
+      left: 0;
+      top: -1rem;
+    }
+    .section-title-wrap {
+      position: relative;
+      padding-left: 0;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .section-count {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ─── BIO SECTION ────────────────────────────────────── */
+    #bio {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .bio-text p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      line-height: 1.9;
+    }
+    .bio-text p strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+    .bio-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .stat-card {
+      padding: 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color var(--transition);
+    }
+    .stat-card:hover { border-color: rgba(200,169,110,0.3); }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+      font-style: italic;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .bio-quote {
+      grid-column: 1 / -1;
+      border-left: 2px solid var(--gold);
+      padding-left: 2rem;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+
+    /* ─── TIMELINE ───────────────────────────────────────── */
+    #parcours { position: relative; }
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(200,169,110,0.1));
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2.5rem;
+      padding-bottom: 3rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -0.4rem;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(200,169,110,0.5);
+    }
+    .timeline-year {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .timeline-role {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+    .timeline-org {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .timeline-desc {
+      font-size: 0.87rem;
+      color: rgba(242,237,232,0.4);
+      line-height: 1.7;
+    }
+
+    /* ─── ARTICLES GRID ──────────────────────────────────── */
+    #articles { background: var(--surface); }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .article-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .article-card:hover {
+      border-color: rgba(200,169,110,0.35);
+      transform: translateY(-3px);
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .article-source {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-dim);
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+    }
+    .article-date {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--white);
+    }
+    .article-title-ar {
+      font-family: var(--font-arabic);
+      direction: rtl;
+      font-size: 1rem;
+      color: rgba(242,237,232,0.7);
+      line-height: 1.6;
+    }
+    .article-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: gap var(--transition);
+    }
+    .article-link:hover { gap: 0.7rem; }
+
+    /* ─── VIDEOS SECTION ─────────────────────────────────── */
+    #videos { position: relative; }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .video-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .video-card:hover {
+      border-color: rgba(200,169,110,0.35);
+      transform: translateY(-3px);
+    }
+    .video-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-thumb-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition);
+      z-index: 1;
+    }
+    .video-card:hover .video-thumb-icon {
+      transform: scale(1.1);
+    }
+    .video-thumb-icon svg { fill: var(--bg); margin-left: 3px; }
+    .video-thumb-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200,169,110,0.05), transparent);
+      transition: opacity var(--transition);
+    }
+    .video-card:hover .video-thumb-bg { opacity: 0; }
+    .video-info {
+      padding: 1.2rem 1.5rem 1.5rem;
+    }
+    .video-platform {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .video-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .video-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── PRESS SECTION ──────────────────────────────────── */
+    #presse { background: var(--surface); }
+    .press-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .press-item {
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+    .press-item:first-child { border-top: 1px solid var(--border); }
+    .press-item:hover { background: rgba(200,169,110,0.03); }
+    .press-source-logo {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .press-title { font-size: 0.92rem; color: var(--white); line-height: 1.5; }
+    .press-title-ar {
+      font-family: var(--font-arabic);
+      direction: rtl;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+    .press-date { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+    .press-arrow {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    /* ─── CONTACT / FOOTER ───────────────────────────────── */
+    footer {
+      padding: clamp(3rem,6vw,5rem) clamp(1.5rem, 8vw, 8rem);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+    }
+    .footer-brand .footer-name {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 0.3rem;
+    }
+    .footer-brand .footer-ar {
+      font-family: var(--font-arabic);
+      direction: rtl;
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .footer-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+      max-width: 360px;
+      line-height: 1.8;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1.5rem;
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .footer-nav a { color: var(--muted); transition: color var(--transition); }
+    .footer-nav a:hover { color: var(--gold); }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(242,237,232,0.25);
+      text-align: right;
+    }
+
+    /* ─── FILTER TABS ────────────────────────────────────── */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      color: var(--muted);
+      transition: all var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--gold-glow);
+    }
+
+    /* ─── LOAD MORE ──────────────────────────────────────── */
+    .load-more-wrap {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .load-more {
+      padding: 0.75rem 2rem;
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: var(--radius);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      color: var(--gold);
+      transition: all var(--transition);
+    }
+    .load-more:hover {
+      background: var(--gold-dim);
+      border-color: var(--gold);
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── MOBILE NAV ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        inset: 68px 0 0 0;
+        background: var(--bg);
+        padding: 2rem;
+        gap: 1.5rem;
+        z-index: 99;
+        align-items: center;
+        justify-content: center;
+      }
+      .bio-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .bio-quote { grid-column: auto; }
+      footer { grid-template-columns: 1fr; }
+      .footer-links { align-items: flex-start; }
+      .footer-nav { justify-content: flex-start; }
+      .footer-copy { text-align: left; }
+      .press-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .press-source-logo { font-size: 0.75rem; }
+      .press-arrow { display: none; }
+    }
+
+    /* ─── HIGHLIGHT BOX ──────────────────────────────────── */
+    .highlight-strip {
+      background: linear-gradient(135deg, rgba(200,169,110,0.07), rgba(200,169,110,0.02));
+      border: 1px solid rgba(200,169,110,0.15);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .highlight-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .highlight-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+    .highlight-text strong { color: var(--white); }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">K. El Gour</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#bio">Biographie</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#articles">Publications</a></li>
+      <li><a href="#videos">Médias</a></li>
+      <li><a href="#presse">Presse</a></li>
+      <li class="nav-ar"><a href="#bio">خديجة الكور</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══ HERO ══════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Bibliographie Digitale</p>
+      <h1 class="hero-name">Khadija <em>El Gour</em></h1>
+      <p class="hero-name-ar">خديجة الكور</p>
+      <div class="hero-divider"></div>
+      <p class="hero-subtitle">
+        Sociologue, militante politique, journaliste et actrice associative marocaine.
+        Co-fondatrice du PAM · Présidente des Femmes Harakies · Membre de la HACA
+      </p>
+      <div class="hero-tags">
+        <span class="tag">Sociologie</span>
+        <span class="tag">Droits des femmes</span>
+        <span class="tag">Parti Politique</span>
+        <span class="tag">Communication</span>
+        <span class="tag">Académique</span>
+        <span class="tag">دكتورة</span>
+      </div>
+      <a href="#bio" class="hero-cta">
+        Découvrir le parcours
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-scroll">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ BIOGRAPHIE ════════════════════════════════════════ -->
+  <section id="bio">
+    <div class="section-header fade-in">
+      <div class="section-title-wrap">
+        <p class="section-label">01 — Biographie</p>
+        <h2 class="section-title">Qui est<br/>Khadija El Gour ?</h2>
+      </div>
+    </div>
+    <div class="bio-grid">
+      <div class="bio-text fade-in">
+        <p>
+          <strong>Khadija El Gour</strong> est une figure intellectuelle et politique marocaine de premier plan. Titulaire d'un <strong>doctorat en sociologie</strong> obtenu dans une université parisienne, elle a construit un parcours pluridisciplinaire remarquable à la croisée de l'académie, du militantisme et de la politique.
+        </p>
+        <p>
+          Professeure-chercheuse en sociologie des médias, journaliste et inspectrice générale (ancienne) au ministère de la Culture, elle a également siégé pendant <strong>8 ans</strong> au Conseil Supérieur de la Communication Audiovisuelle (HACA) du Maroc.
+        </p>
+        <p>
+          Sur le plan politique, elle est l'une des <strong>co-fondatrices du PAM</strong> (Parti Authenticité et Modernité), où elle a exercé comme première femme trésorière et porte-parole officielle. Depuis novembre 2023, elle préside l'<strong>Organisation des Femmes Harakies</strong> du Mouvement Populaire.
+        </p>
+        <p>
+          Intellectuelle engagée, elle intervient régulièrement dans les débats publics marocains sur les thèmes de la gouvernance, des droits des femmes, de la démocratie et de l'identité culturelle.
+        </p>
+      </div>
+      <div>
+        <div class="bio-stats fade-in">
+          <div class="stat-card">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Ans à la HACA</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Mandats au Bureau Politique PAM</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2008</div>
+            <div class="stat-label">Fondation du PAM</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2023</div>
+            <div class="stat-label">Présidente Femmes Harakies</div>
+          </div>
+        </div>
+        <blockquote class="bio-quote fade-in">
+          "La politique ne recouvre sa légitimité que lorsqu'elle retrouve son essence : expliquer les décisions, interpeller les choix, rendre des comptes."
+          <br/><small style="font-size:0.75rem;margin-top:0.5rem;display:block;color:rgba(242,237,232,0.4)">— Khadija El Gour, Avril 2026</small>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PARCOURS ══════════════════════════════════════════ -->
+  <section id="parcours">
+    <div class="section-header fade-in">
+      <div class="section-title-wrap">
+        <p class="section-label">02 — Parcours</p>
+        <h2 class="section-title">Chronologie</h2>
+      </div>
+    </div>
+    <div class="timeline fade-in">
+      <div class="timeline-item">
+        <div class="timeline-year">Début carrière</div>
+        <div class="timeline-role">Doctorat en Sociologie</div>
+        <div class="timeline-org">Université de Paris, France</div>
+        <div class="timeline-desc">Thèse soutenue en sociologie. Fiche académique indexée sur Theses.fr.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Années 2000–2010</div>
+        <div class="timeline-role">Professeure-Chercheuse & Inspectrice Générale</div>
+        <div class="timeline-org">Enseignement Supérieur / Ministère de la Culture, Maroc</div>
+        <div class="timeline-desc">Professeure de sociologie des médias et inspectrice générale au Ministère de la Culture.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2008</div>
+        <div class="timeline-role">Co-fondatrice du PAM</div>
+        <div class="timeline-org">Parti Authenticité et Modernité, Maroc</div>
+        <div class="timeline-desc">Membre fondatrice du Mouvement pour tous les démocrates, noyau du PAM. Première femme trésorière du parti. Élue deux fois au Bureau Politique (mandats Benaddi et Biadillah).</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2008–2015 (env.)</div>
+        <div class="timeline-role">Membre du Conseil Supérieur de la Communication Audiovisuelle</div>
+        <div class="timeline-org">HACA, Royaume du Maroc</div>
+        <div class="timeline-desc">Siège pendant 8 ans à la HACA, institution de régulation des médias audiovisuels au Maroc.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2018</div>
+        <div class="timeline-role">Bureau Politique du PAM — Porte-parole officielle</div>
+        <div class="timeline-org">PAM, Maroc</div>
+        <div class="timeline-desc">Réélue au Bureau Politique lors du Conseil national de juillet 2018. Assume le rôle de porte-parole du parti.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-role">Rejoint le Mouvement Populaire</div>
+        <div class="timeline-org">Mouvement Populaire (الحركة الشعبية)</div>
+        <div class="timeline-desc">Participe activement au 14e congrès du parti. Élue au Conseil National.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Nov. 2023</div>
+        <div class="timeline-role">Présidente de l'Organisation des Femmes Harakies</div>
+        <div class="timeline-org">Mouvement Populaire — 5e Congrès National, Bouznika</div>
+        <div class="timeline-desc">Élue à l'unanimité par acclamation lors du congrès sur le thème "Femmes leaders dans le Maroc des défis". Seule candidate, son élection reflète la nouvelle dynamique du parti.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2024–2026</div>
+        <div class="timeline-role">Membre du Bureau Exécutif & Militante Active</div>
+        <div class="timeline-org">Mouvement Populaire / Femmes Harakies</div>
+        <div class="timeline-desc">Réunions, formations, prises de position publiques, publications régulières dans les médias nationaux et arabophones.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PUBLICATIONS ══════════════════════════════════════ -->
+  <section id="articles">
+    <div class="section-header fade-in">
+      <div class="section-title-wrap">
+        <p class="section-label">03 — Publications</p>
+        <h2 class="section-title">Articles & Tribunes</h2>
+      </div>
+      <div class="section-count">24 contenus référencés</div>
+    </div>
+
+    <div class="filter-tabs fade-in">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="hespress">Hespress</button>
+      <button class="filter-btn" data-filter="anfas">Anfas Press</button>
+      <button class="filter-btn" data-filter="alharaka">Al Haraka</button>
+      <button class="filter-btn" data-filter="autre">Autres médias</button>
+    </div>
+
+    <div class="articles-grid" id="articlesGrid">
+
+      <a href="https://www.hespress.com/%d8%a7%d9%84%d8%ac%d9%8a%d9%84-z-%d8%a7%d9%84%d8%aa%d8%b9%d8%a8%d8%a6%d8%a9-%d8%a7%d9%84%d8%b1%d9%82%d9%85%d9%8a%d8%a9-%d9%88%d8%a5%d8%b9%d8%a7%d8%af%d8%a9-%d8%aa%d8%b4%d9%83%d9%91%d9%84-%d8%a7-1634159.html" target="_blank" class="article-card" data-cat="hespress">
+        <div class="article-meta">
+          <span class="article-source">Hespress</span>
+          <span class="article-date">Oct. 2025</span>
+        </div>
+        <div class="article-title-ar">"الجيل Z" وإعادة تشكّل السياسة العالمية</div>
+        <div class="article-title">La Génération Z et la recomposition de la politique mondiale</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://www.hespress.com/%d9%85%d9%86-%d9%85%d8%ba%d8%b1%d8%a8%d9%8d-%d8%a8%d8%b3%d8%b1%d8%b9%d8%aa%d9%8a%d9%86-%d8%a5%d9%84%d9%89-%d9%85%d8%ba%d8%b1%d8%a8-%d8%a7%d9%84%d8%b9%d8%af%d8%a7%d9%84%d8%a9-%d8%a7%d9%84%d9%85%d8%ac-1601584.html" target="_blank" class="article-card" data-cat="hespress">
+        <div class="article-meta">
+          <span class="article-source">Hespress</span>
+          <span class="article-date">Juil. 2025</span>
+        </div>
+        <div class="article-title-ar">نداءٌ ملكي يستنهض الضمير السياسي</div>
+        <div class="article-title">Appel royal pour un réveil de la conscience politique</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://anfaspress.com/news/voir/155646-2025-08-08-12-44-03" target="_blank" class="article-card" data-cat="anfas">
+        <div class="article-meta">
+          <span class="article-source">Anfas Press</span>
+          <span class="article-date">Août 2025</span>
+        </div>
+        <div class="article-title-ar">خطاب العرش 2025.. لحظة تعبئة وطنية</div>
+        <div class="article-title">Le Discours du Trône 2025 : un moment de mobilisation nationale pour la justice sociale</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://anfaspress.com/news/voir/162431-2025-12-12-06-55-20" target="_blank" class="article-card" data-cat="anfas">
+        <div class="article-meta">
+          <span class="article-source">Anfas Press</span>
+          <span class="article-date">Déc. 2025</span>
+        </div>
+        <div class="article-title-ar">القفطان المغربي.. من إبداع تتوارثه النساء إلى اعتراف إنساني خالد</div>
+        <div class="article-title">Le Kaftan marocain : de la créativité féminine à la reconnaissance de l'UNESCO</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://anfaspress.com/news/voir/156983-2025-09-08-06-19-46" target="_blank" class="article-card" data-cat="anfas">
+        <div class="article-meta">
+          <span class="article-source">Anfas Press</span>
+          <span class="article-date">Sept. 2025</span>
+        </div>
+        <div class="article-title-ar">الحوز بعد عامين.. بين الذاكرة والصمود</div>
+        <div class="article-title">Al Haouz deux ans après : entre mémoire et résilience — témoignage personnel</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://www.siyassi.com/avis/329200/" target="_blank" class="article-card" data-cat="autre">
+        <div class="article-meta">
+          <span class="article-source">Siyassi.com</span>
+          <span class="article-date">Août 2025</span>
+        </div>
+        <div class="article-title-ar">استقطاب الكفاءات وإعادة الثقة في نبل العمل السياسي</div>
+        <div class="article-title">Attirer les compétences et restaurer la confiance dans l'action politique</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://alharaka.ma/fr/de-linterpellation-des-decisions-a-la-restauration-de-la-confiance-m-mohamed-ouzzine-recentre-le-debat-politique-a-travers-lemission-saaate-essaraha/" target="_blank" class="article-card" data-cat="alharaka">
+        <div class="article-meta">
+          <span class="article-source">Al Haraka</span>
+          <span class="article-date">Avr. 2026</span>
+        </div>
+        <div class="article-title">De l'interpellation des décisions à la restauration de la confiance — Analyse de l'émission Saâate Essaraha</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://anfaspress.com/news/voir/118130-2023-06-25-01-25-38" target="_blank" class="article-card" data-cat="anfas">
+        <div class="article-meta">
+          <span class="article-source">Anfas Press</span>
+          <span class="article-date">Juin 2023</span>
+        </div>
+        <div class="article-title-ar">الإعلام بين أزمنة اليقين واللايقين</div>
+        <div class="article-title">Les médias entre les temps de la certitude et de l'incertitude — Salon du livre de Rabat 2023</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://anfaspress.com/news/voir/85644-2021-09-12-10-16-28" target="_blank" class="article-card" data-cat="anfas">
+        <div class="article-meta">
+          <span class="article-source">Anfas Press</span>
+          <span class="article-date">Sept. 2021</span>
+        </div>
+        <div class="article-title-ar">الناخبون المغاربة قالوا كفى لبيع الأوهام والاستغلال السياسوي للدين</div>
+        <div class="article-title">Les électeurs marocains ont dit stop à la vente d'illusions et à l'exploitation politicienne de la religion</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://anfaspress.com/news/voir/86389-2021-09-28-04-01-30" target="_blank" class="article-card" data-cat="anfas">
+        <div class="article-meta">
+          <span class="article-source">Anfas Press</span>
+          <span class="article-date">Sept. 2021</span>
+        </div>
+        <div class="article-title-ar">أسئلة الهوية والقيم في برامج أحزاب الأغلبية الحكومية</div>
+        <div class="article-title">Questions d'identité et de valeurs dans les programmes des partis de la majorité gouvernementale</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://www.hespress.com/%d9%85%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%b8%d8%a7%d9%87%d8%b1%d8%a9-%d8%a7%d9%84%d8%aa%d8%b7%d8%b1%d9%81-%d8%a8%d8%a7%d9%84%d9%85%d8%ba%d8%b1%d8%a8-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d9%85%d9%82%d8%a7-335139.html" target="_blank" class="article-card" data-cat="hespress">
+        <div class="article-meta">
+          <span class="article-source">Hespress</span>
+          <span class="article-date">Janv. 2017</span>
+        </div>
+        <div class="article-title-ar">مواجهة ظاهرة التطرف بالمغرب بين المقاربة الأمنية وآليات اليقظة</div>
+        <div class="article-title">Face à l'extrémisme au Maroc : entre approche sécuritaire et mécanismes de vigilance</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+      <a href="https://anfaspress.ma/news/print/137328-2024-07-27-01-00-24" target="_blank" class="article-card" data-cat="anfas">
+        <div class="article-meta">
+          <span class="article-source">Anfas Press</span>
+          <span class="article-date">Juil. 2024</span>
+        </div>
+        <div class="article-title-ar">سمات الهوية المغربية.. الجذور والامتداد في عهد الملك محمد السادس</div>
+        <div class="article-title">Identité marocaine : racines et extension sous le règne du Roi Mohammed VI</div>
+        <span class="article-link">Lire l'article →</span>
+      </a>
+
+    </div>
+
+    <div class="load-more-wrap">
+      <button class="load-more" id="loadMoreArticles">Voir plus de publications</button>
+    </div>
+  </section>
+
+  <!-- ═══ MÉDIAS / VIDÉOS ═══════════════════════════════════ -->
+  <section id="videos">
+    <div class="section-header fade-in">
+      <div class="section-title-wrap">
+        <p class="section-label">04 — Médias</p>
+        <h2 class="section-title">Apparitions Vidéo & TV</h2>
+      </div>
+    </div>
+
+    <div class="highlight-strip fade-in">
+      <div class="highlight-icon">📺</div>
+      <div class="highlight-text">
+        <strong>Personnalité médiatique reconnue</strong> — Khadija El Gour est une figure régulièrement invitée dans les émissions politiques marocaines sur Al Aoula, 2M et Chouf TV. Les vidéos ci-dessous sont les contenus indexés en ligne. Pour l'intégralité des archives, consultez directement les plateformes TV.
+      </div>
+    </div>
+
+    <div class="videos-grid fade-in">
+
+      <a href="https://www.youtube.com/watch?v=gF2co1RGe0w" target="_blank" class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-bg"></div>
+          <div class="video-thumb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-platform">YouTube · Déc. 2025</div>
+          <div class="video-title">Khadija El Gour : Présidente des Femmes du Mouvement Populaire</div>
+          <div class="video-desc">Interview complète sur sa présidence et sa vision politique pour les femmes marocaines.</div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=0QJk1pKNIAg" target="_blank" class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-bg"></div>
+          <div class="video-thumb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-platform">Al Aoula (القناة الأولى) · Oct. 2025</div>
+          <div class="video-title">ضيفة القناة الأولى — المنظومة القانونية المؤطرة للانتخابات التشريعية</div>
+          <div class="video-desc">Invitée sur la 1ère chaîne nationale pour analyser le cadre juridique des élections législatives.</div>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=lblupvVf0JI" target="_blank" class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-bg"></div>
+          <div class="video-thumb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-platform">LE7TV · Fév. 2025</div>
+          <div class="video-title">تثمن القرار الملكي بإلغاء أضحية العيد</div>
+          <div class="video-desc">Réaction et prise de position sur la décision royale concernant le sacrifice de l'Aïd.</div>
+        </div>
+      </a>
+
+      <a href="https://www.facebook.com/chouftvlive/videos/677729307762025/" target="_blank" class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-bg"></div>
+          <div class="video-thumb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-platform">Chouf TV Live · Facebook</div>
+          <div class="video-title">المرشحة الوحيدة لرئاسة نساء الحركيات — تكشف سبب عودتها من البام</div>
+          <div class="video-desc">Entretien exclusif sur son retour au politique et sa candidature à la présidence.</div>
+        </div>
+      </a>
+
+      <a href="https://www.facebook.com/Almolahidofficial/videos/1225011396175517/" target="_blank" class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-bg"></div>
+          <div class="video-thumb-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-platform">Al Molahid (الملاحظ) · Facebook</div>
+          <div class="video-title">كلمة الأستاذة خديجة الكور باحثة وفاعلة مدنية</div>
+          <div class="video-desc">Allocution lors d'un événement de la société civile marocaine.</div>
+        </div>
+      </a>
+
+      <div class="video-card" style="cursor:default;">
+        <div class="video-thumb" style="background: rgba(200,169,110,0.04);">
+          <div class="video-thumb-bg"></div>
+          <div style="text-align:center;padding:1rem;z-index:1;position:relative;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;opacity:0.5">📡</div>
+            <p style="font-size:0.78rem;color:var(--muted);">Nombreuses apparitions TV non encore archivées en ligne</p>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-platform">2M · Al Aoula · Medi1 TV</div>
+          <div class="video-title">Archives TV — À explorer</div>
+          <div class="video-desc">De nombreuses émissions politiques sur les chaînes nationales marocaines sont disponibles dans leurs archives respectives.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PRESSE ═════════════════════════════════════════════ -->
+  <section id="presse">
+    <div class="section-header fade-in">
+      <div class="section-title-wrap">
+        <p class="section-label">05 — Presse</p>
+        <h2 class="section-title">Couvertures & Références</h2>
+      </div>
+      <div class="section-count">Médias marocains & arabophones</div>
+    </div>
+
+    <div class="press-list fade-in">
+
+      <a href="https://www.alquds.co.uk/%D8%AE%D8%AF%D9%8A%D8%AC%D8%A9-%D8%A7%D9%84%D9%83%D9%88%D8%B1-%D8%B1%D8%A6%D9%8A%D8%B3%D8%A9-%D9%85%D9%86%D8%B8%D9%85%D8%A9-%D8%A7%D9%84%D9%86%D8%B3%D8%A7%D8%A1-%D8%A7%D9%84%D8%AD%D8%B1%D9%83/" target="_blank" class="press-item">
+        <div class="press-source-logo">Al Quds Al Arabi</div>
+        <div>
+          <div class="press-title">Grand entretien — La militante marocaine critique les obstacles à l'autonomisation politique des femmes</div>
+          <div class="press-title-ar">العملية الانتخابية تتحول أحياناً إلى سوق سياسية وأزمة الشباب صرخة وجودية</div>
+        </div>
+        <div>
+          <div class="press-date">Juil. 2025</div>
+          <div class="press-arrow">Lire →</div>
+        </div>
+      </a>
+
+      <a href="https://lematin.ma/nation/khadija-el-gour-a-la-tete-des-femmes-du-mouvement-populaire/201387" target="_blank" class="press-item">
+        <div class="press-source-logo">Le Matin.ma</div>
+        <div>
+          <div class="press-title">Khadija El Gour, une ancienne du PAM à la tête des femmes du Mouvement populaire</div>
+          <div class="press-title-ar">خديجة الكور من البام إلى قيادة النساء الحركيات</div>
+        </div>
+        <div>
+          <div class="press-date">Nov. 2023</div>
+          <div class="press-arrow">Lire →</div>
+        </div>
+      </a>
+
+      <a href="https://www.jeuneafrique.com/696217/politique/maroc-le-pam-peut-il-sortir-de-la-tourmente-et-reussir-le-pari-de-devenir-le-parti-des-regions/" target="_blank" class="press-item">
+        <div class="press-source-logo">Jeune Afrique</div>
+        <div>
+          <div class="press-title">Maroc : le PAM peut-il devenir "le parti des régions" ? — mention comme trésorière nommée</div>
+        </div>
+        <div>
+          <div class="press-date">Janv. 2019</div>
+          <div class="press-arrow">Lire →</div>
+        </div>
+      </a>
+
+      <a href="https://www.yabiladi.com/articles/details/67104/nouveau-bureau-politique-sans-partisans.html" target="_blank" class="press-item">
+        <div class="press-source-logo">Yabiladi</div>
+        <div>
+          <div class="press-title">PAM : nouveau bureau politique — Khadija El Gour maintenue parmi les 5 membres reconduits</div>
+        </div>
+        <div>
+          <div class="press-date">Juil. 2018</div>
+          <div class="press-arrow">Lire →</div>
+        </div>
+      </a>
+
+      <a href="https://www.horrapress.eu/archives/11374" target="_blank" class="press-item">
+        <div class="press-source-logo">Horra Press</div>
+        <div>
+          <div class="press-title">Portrait : خديجة الكور من السوسيولوجيا إلى السياسة</div>
+          <div class="press-title-ar">مسار امرأة استثنائية ذات تدخلات قوية في النقاشات الإعلامية والسياسية</div>
+        </div>
+        <div>
+          <div class="press-date">Avr. 2021</div>
+          <div class="press-arrow">Lire →</div>
+        </div>
+      </a>
+
+      <a href="https://ahdath.info/513802" target="_blank" class="press-item">
+        <div class="press-source-logo">Ahdath.info</div>
+        <div>
+          <div class="press-title">Discours à Tétouan : défense du PAM face aux dissidents</div>
+          <div class="press-title-ar">تبا لمن اعتبروا البام لقمة سائغة</div>
+        </div>
+        <div>
+          <div class="press-date">2019</div>
+          <div class="press-arrow">Lire →</div>
+        </div>
+      </a>
+
+      <a href="https://le7tv.ma/551326.html/" target="_blank" class="press-item">
+        <div class="press-source-logo">LE7TV</div>
+        <div>
+          <div class="press-title">Khadija El Gour salue la décision royale sur l'Aïd al-Adha</div>
+          <div class="press-title-ar">خديجة الكور تثمن القرار الملكي بإلغاء أضحية العيد</div>
+        </div>
+        <div>
+          <div class="press-date">Mars 2025</div>
+          <div class="press-arrow">Lire →</div>
+        </div>
+      </a>
+
+      <a href="https://theses.fr/133624609" target="_blank" class="press-item">
+        <div class="press-source-logo">Theses.fr</div>
+        <div>
+          <div class="press-title">Fiche académique officielle — Doctorat en sociologie (Paris)</div>
+        </div>
+        <div>
+          <div class="press-date">Académique</div>
+          <div class="press-arrow">Voir →</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-brand">
+      <div class="footer-name">Khadija El Gour</div>
+      <div class="footer-ar">خديجة الكور</div>
+      <p class="footer-desc">
+        Bibliographie digitale rassemblant l'ensemble des travaux, publications, apparitions médiatiques et actions politiques de Khadija El Gour — sociologue, militante, présidente des Femmes Harakies.
+      </p>
+    </div>
+    <div class="footer-links">
+      <ul class="footer-nav">
+        <li><a href="#bio">Biographie</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#articles">Publications</a></li>
+        <li><a href="#videos">Médias</a></li>
+        <li><a href="#presse">Presse</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 — Bibliographie Digitale · Khadija El Gour · Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <!-- ═══ JAVASCRIPT ════════════════════════════════════════ -->
+  <script>
+    // ─── NAV TOGGLE ──────────────────────────────────────────
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // ─── NAV SCROLL EFFECT ───────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.borderBottomColor = window.scrollY > 50
+        ? 'rgba(255,255,255,0.1)'
+        : 'rgba(255,255,255,0.07)';
+    });
+
+    // ─── INTERSECTION OBSERVER (FADE IN) ────────────────────
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ─── FILTER TABS ─────────────────────────────────────────
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#articlesGrid .article-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.cat === filter)
+            ? '' : 'none';
+        });
+      });
+    });
+
+    // ─── LOAD MORE ───────────────────────────────────────────
+    const extraArticles = [
+      { cat: 'anfas', source: 'Anfas Press', date: 'Mai 2021', ar: 'الأمناء العامون للأحزاب ليسوا أنبياء في السياسة', fr: "Les secrétaires généraux des partis ne sont pas des prophètes", url: 'https://www.anfaspress.com/news/voir/80435-2021-05-12-11-04-03' },
+      { cat: 'hespress', source: 'Hespress', date: 'Sept. 2021', ar: 'البرنامج الحكومي المقبل', fr: 'Le prochain programme gouvernemental — analyse', url: 'https://www.hespress.com/%d8%a7%d9%84%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-%d8%a7%d9%84%d8%ad%d9%83%d9%88%d9%85%d9%8a-%d8%a7%d9%84%d9%85%d9%82%d8%a8%d9%84-%d8%a8%d9%8a%d9%86-%d9%85%d8%b3%d8%aa%d9%84%d8%b2%d9%85%d8%a7%d8%aa-880419.html' },
+      { cat: 'autre', source: 'Al Balad.ma', date: 'Sept. 2021', ar: 'أسئلة الهوية والقيم في برامج أحزاب الأغلبية', fr: "Identité et valeurs dans les programmes des partis", url: 'https://albalad.ma/15961.html' },
+      { cat: 'anfas', source: 'Anfas Press', date: 'Juil. 2024', ar: 'سمات الهوية المغربية في عهد الملك محمد السادس', fr: "L'identité marocaine sous Mohammed VI", url: 'https://anfaspress.ma/news/print/137328-2024-07-27-01-00-24' },
+      { cat: 'autre', source: 'Al Qalam Al Hor', date: '2019', ar: 'العنف ضد النساء يستدعي الصمود', fr: 'La violence contre les femmes exige résistance et vigilance sur les réseaux sociaux', url: 'http://www.alqalamlhor.com/2019/06/blog-post_829.html' },
+      { cat: 'autre', source: 'msalkhir.com', date: 'Déc. 2020', ar: 'البام حزب المواقف ومشروع مجتمعي', fr: 'Le PAM : parti des positions et projet sociétal ouvert à tous', url: 'https://www.msalkhir.com/14563/' },
+    ];
+    let loaded = false;
+    document.getElementById('loadMoreArticles').addEventListener('click', function() {
+      if (loaded) return;
+      loaded = true;
+      const grid = document.getElementById('articlesGrid');
+      extraArticles.forEach(a => {
+        const card = document.createElement('a');
+        card.href = a.url;
+        card.target = '_blank';
+        card.className = 'article-card fade-in';
+        card.dataset.cat = a.cat;
+        card.innerHTML = `
+          <div class="article-meta">
+            <span class="article-source">${a.source}</span>
+            <span class="article-date">${a.date}</span>
+          </div>
+          <div class="article-title-ar">${a.ar}</div>
+          <div class="article-title">${a.fr}</div>
+          <span class="article-link">Lire l'article →</span>
+        `;
+        grid.appendChild(card);
+        setTimeout(() => {
+          card.classList.add('visible');
+          observer.observe(card);
+        }, 100);
+      });
+      this.textContent = 'Toutes les publications chargées ✓';
+      this.disabled = true;
+      this.style.opacity = '0.5';
+    });
+  </script>
+</body>
+</html>
