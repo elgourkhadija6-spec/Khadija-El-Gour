@@ -71,7 +71,7 @@
     .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.9rem; font-weight: 700; font-family: var(--font-arabic); }
     .nav-links a { color: rgba(255,255,255,0.75); transition: color var(--transition); }
     .nav-links a:hover { color: #FFFFFF; }
-    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: transparent; }
     .nav-toggle span { display: block; width: 24px; height: 1.5px; background: #FFFFFF; transition: var(--transition); }
     #hero {
       min-height: 100vh;
@@ -186,7 +186,7 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
-      .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 68px 0 0 0; background: #000000; padding: 2rem; gap: 1.5rem; z-index: 99; align-items: center; justify-content: center; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: #000000; padding: 1.5rem 2rem; gap: 0.6rem; z-index: 99; align-items: center; justify-content: flex-start; overflow-y: auto; }
       .bio-grid { grid-template-columns: 1fr; gap: 3rem; }
       .bio-quote { grid-column: auto; }
       footer { grid-template-columns: 1fr; }
@@ -270,6 +270,12 @@ footer .footer-desc { color: rgba(255,255,255,0.7); }
 footer .footer-nav a { color: rgba(255,255,255,0.6); }
 footer .footer-nav a:hover { color: #FFFFFF; }
 footer .footer-copy { color: rgba(255,255,255,0.3); }
+    @media (max-width: 768px) {
+  .nav-links.open a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+}
   </style>
 <script type="application/ld+json">
 {
