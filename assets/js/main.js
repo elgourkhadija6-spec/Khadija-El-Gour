@@ -29,7 +29,8 @@
       '<span class="meta">' + meta(v) + '</span><span class="t">' + esc(v.title) + '</span></a>';
   }
   function articleHTML(a) {
-    return '<li class="reveal"><a href="' + esc(a.url) + '" target="_blank" rel="noopener">' +
+    var ext = a.page ? '">' : '" target="_blank" rel="noopener">';
+    return '<li class="reveal"><a href="' + esc(a.page || a.url) + ext +
       '<span class="meta">' + meta(a) + '</span><span class="t">' + esc(a.title) + '</span></a></li>';
   }
 
@@ -49,6 +50,11 @@
 
   document.querySelectorAll('[data-videos]').forEach(function (el) { fill(el, window.KEG_VIDEOS || [], videoHTML); });
   document.querySelectorAll('[data-articles]').forEach(function (el) { fill(el, window.KEG_ARTICLES || [], articleHTML); });
+  document.querySelectorAll('[data-related]').forEach(function (el) {
+    var cur = el.getAttribute('data-related');
+    var list = (window.KEG_ARTICLES || []).filter(function (a) { return a.page && a.page !== cur; }).slice(0, 3);
+    el.innerHTML = list.map(articleHTML).join('');
+  });
 
   // Apparition douce au défilement
   var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
